@@ -1,0 +1,178 @@
+html,
+body,
+input,
+button,
+select,
+textarea {
+  font: 15px/25px "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+html, body {
+  height: 100%;
+}
+a {
+  color: #3c80c3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active,
+a:focus {
+  color: #1e4062;
+}
+p {
+  padding-bottom: 15px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #464646;
+  padding: 6px 0 5px 0;
+  letter-spacing: -1px;
+  font-weight: 300;
+}
+h1 {
+  padding: 0px 0 5px 0;
+  font-size: 45px;
+  line-height: 55px;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+h2 {
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h4 {
+  font-size: 25px;
+  line-height: 35px;
+}
+h5 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
+h6 {
+  color: #b8b8b8;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+b,
+strong {
+  font-weight: 500;
+}
+i,
+em {
+  font-style: italic;
+}
+pre,
+code {
+  font-size: 12px;
+  font-family: Monaco, Menlo, monospace;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #e2e2e2;
+  overflow: scroll;
+}
+hr {
+  border-top: 1px solid #e2e2e2;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  margin: 10px 0 30px 0;
+}
+
+#page {
+  height: 100%;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px 10px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logo h1 {
+  line-height: 25px;
+}
+
+.logo h6 {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  line-height: 11px;
+}
+
+#map { 
+  min-height: 100%;
+  width: 80%;
+}
+
+#info {
+  min-height: 100%;
+  background-color: #fcfcfc;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0px 15px;
+  border-left: 1px solid #dbdbdb;
+}
+
+/* leaflet overrides */ 
+.leaflet-top {
+  top: 70px;
+}
+
+.leaflet-popup-content-wrapper {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+padding: 4px 3px 0px 0px;
+font-weight: 100;
+}
+
+.wf-loading {
+  visibility: hidden;
+}
+
+.container:after,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+}
+* html .clearfix {
+  height: 1%;
+  overflow: visible;
+}
+*:first-child + html .clearfix {
+  min-height: 1%;
+}
+.row,
+.clearfix {
+  *zoom: 1;
+}

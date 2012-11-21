@@ -18,7 +18,7 @@ function init() {
       $.each(data, function(index, value) {
         console.log(value["test"]);
         L.marker([value["latitude"], value["longitude"]]).addTo(map)
-        .bindPopup('<h6>' + value["test"] + '</h6>' + value["hi"] + '<br>');
+        .bindPopup('<h6>' + value["name"] + '</h6>' + value["description"] + '<br>' + value["address"]);
       });
       
       var pop = L.popup();

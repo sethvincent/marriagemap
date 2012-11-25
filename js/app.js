@@ -1,13 +1,13 @@
 function init() {
   Tabletop.init({ 
-    key: '0AuwSoq4skLXjdG10S2FJcFp5SmFpU3NCTDdmUVB4ZWc',
+    key: '0AuwSoq4skLXjdGdzQV9fdnBKeHB6blN2MVZKMS00WXc',
     callback: function(data, tabletop) { 
       console.log(data);
       
       var map = L.map('map', {
         scrollWheelZoom: false,
         center: [47.62931, -122.26307],
-        zoom: 12
+        zoom: 10
       })
 
       L.tileLayer('http://{s}.tile.cloudmade.com/5aabd2e38b214356942b011b42b77394/997/256/{z}/{x}/{y}.png', {
@@ -18,7 +18,7 @@ function init() {
       $.each(data, function(index, value) {
         console.log(value["test"]);
         L.marker([value["latitude"], value["longitude"]]).addTo(map)
-        .bindPopup('<h6>' + value["name"] + '</h6>' + value["description"] + '<br>' + value["address"]);
+        .bindPopup('<h6>' + value["name"] + '</h6>' + value["description"] + '<br>' + value["address"] + '<br><a href="' + value["website"] + '" target="_blank">Learn more about this location');
       });
       
       var pop = L.popup();

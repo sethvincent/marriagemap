@@ -17,7 +17,7 @@
         <![endif]-->
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="index">
+    <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -28,17 +28,12 @@
             <h1>crosscut</h1>
             <h6>replace with logo</h6>
           </div>
-          <div class="welcome"> 
-            <h4>Choose an option to view map:</h4>
-            <p>Learn more about obtaining a marriage license and where to hold the marriage ceremony.</p>
-            <span class="arrow-right"></span>
-          </div>
           <div id="info">
             <div class="inside">
               <br>
               <h3>Same-sex Marriage <br>in King County</h3>
               <p>Starting December 6, same-sex couples in Washington will be able to marry.</p>
-              <a href="/licenses.html" class="button"><strong>Obtain a marriage license</strong></a>
+              <a href="/licenses.html" class="button active"><strong>Obtain a marriage license</strong></a>
               <a href="/ceremonies.html" class="button"><strong>Hold a marriage ceremony</strong></a>
               <p class="small">Click a pin for more info about a location.</p>
               <div class="submit-location">
@@ -70,22 +65,29 @@
         
         <script>
         (function($) {
-          var map = L.map('map', {
-            scrollWheelZoom: false,
-            center: [47.62931, -122.26307],
-            zoom: 10
-          })
+          Tabletop.init({ 
+            key: '0AuwSoq4skLXjdG10S2FJcFp5SmFpU3NCTDdmUVB4ZWc',
+            callback: function(data, tabletop) {
+              var map = L.map('map', {
+                scrollWheelZoom: false,
+                center: [47.62931, -122.26307],
+                zoom: 10
+              }); 
 
-          L.tileLayer('http://{s}.tile.cloudmade.com/5aabd2e38b214356942b011b42b77394/997/256/{z}/{x}/{y}.png', {
-              attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-              maxZoom: 18,
-          }).addTo(map);
+              L.tileLayer('http://{s}.tile.cloudmade.com/5aabd2e38b214356942b011b42b77394/997/256/{z}/{x}/{y}.png', {
+                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                  maxZoom: 18,
+              }).addTo(map);
       
-          var maps = $(".map-containers");
-          $(maps).each(function() {
-            $(this).addClass("hidden").html("");
+              $.each(data, function(index, value) {
+                L.marker([value["latitude"], value["longitude"]]).addTo(map)
+                .bindPopup('<h6>' + value["name"] + '</h6>' + value["description"] + '<br>' + value["address"] + '<br><a href="' + value["website"] + '" target="_blank">Learn more about this location');
+              });
+      
+              var pop = L.popup();
+            },
+            simpleSheet: true 
           });
-          $("#index-map").removeClass("hidden");
         })(jQuery);
         </script>
     </body>

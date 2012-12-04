@@ -246,6 +246,27 @@ a.button.active:hover {
   display: block;
 } */
 
+body.new #page {
+  width: 500px;
+  margin: 0px auto;
+  padding: 20px 15px;
+  background-color: #f8f8f4;
+  font-size: 20px;
+  line-height: 26px;
+  color: #555;
+}
+
+body.new .logo {
+position: static;
+  padding: 0px;
+  width: 200px;
+  height: 60px;
+  -webkit-box-shadow:  0px 0px 3px 1px rgba(133, 133, 133, 0.3);
+  box-shadow:  0px 0px 3px 1px rgba(133, 133, 133, 0.3);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
 
 /* leaflet overrides */ 
 .leaflet-top {

@@ -121,6 +121,7 @@ hr {
   top: 0;
   right: 0;
   border-left: 1px solid #dbdbdb;
+  z-index: 1000;
 }
 
 #info .inside {
